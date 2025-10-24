@@ -14,7 +14,6 @@ body {
   line-height: 1.6;
 }
 
-/* ===== Header ===== */
 .main-header {
   position: relative;
   text-align: center;
@@ -35,7 +34,6 @@ body {
   margin-top: 10px;
 }
 
-/* ===== Links dos Desenvolvedores ===== */
 .dev-link {
   color: #ff003c;
   font-weight: 600;
@@ -47,7 +45,6 @@ body {
   color: #fff;
 }
 
-/* ===== Navegação ===== */
 .nav-menu {
   position: absolute;
   top: 20px;
@@ -66,7 +63,6 @@ body {
   color: #fff;
 }
 
-/* ===== Botões de Repositório ===== */
 .repo-buttons {
   margin-top: 25px;
 }
@@ -87,7 +83,6 @@ body {
   transform: scale(1.05);
 }
 
-/* ===== Seções ===== */
 .section {
   max-width: 900px;
   margin: 60px auto;
@@ -107,7 +102,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* ===== Personagem ===== */
 .character-container {
   display: flex;
   align-items: center;
@@ -121,7 +115,6 @@ body {
   border: 2px solid #333;
 }
 
-/* ===== Galeria ===== */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -142,24 +135,68 @@ body {
   border-color: #ff003c;
 }
 
-/* ===== Vídeo ===== */
 .video-container {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin-top: 25px;
 }
 
-.video-link {
-  color: #ff003c;
-  font-weight: 600;
-  text-decoration: none;
+.video-container iframe {
+  width: 80%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 10px;
+  border: 2px solid #333;
   transition: 0.3s;
 }
 
-.video-link:hover {
-  color: #fff;
+.video-container iframe:hover {
+  border-color: #ff003c;
+  transform: scale(1.02);
 }
 
-/* ===== Footer ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+#caption {
+  text-align: center;
+  color: #ccc;
+  padding: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 45px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #ff003c;
+}
+
 footer {
   text-align: center;
   padding: 30px;

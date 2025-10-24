@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Cabeçalho -->
   <header class="main-header">
     <div class="header-content">
       <img src="images/NightVeil Logo S.png" alt="NightVeil Logo" class="logo">
@@ -19,14 +18,12 @@
         <a href="https://www.linkedin.com/in/marcela-lima-6a84b32b3/" class="dev-link" target="_blank">Marcela Nascimento Lima</a>
       </p>
 
-      <!-- Botões de Repositórios -->
       <div class="repo-buttons">
         <a href="https://github.com/ThiagoTzk/Projeto-NightVeil" target="_blank" class="btn">Repositório do Jogo</a>
-        <a href="https://github.com/SEU_USUARIO/NightVeil-Site" target="_blank" class="btn">Repositório do Site</a>
+        <a href="https://github.com/ThiagoTzk/NightVeil-Presskit" target="_blank" class="btn">Repositório do Site</a>
       </div>
     </div>
 
-    <!-- Menu de Navegação -->
     <nav class="nav-menu">
       <a href="#historia">História do Jogo</a>
       <a href="#personagem">Personagem</a>
@@ -34,17 +31,15 @@
     </nav>
   </header>
 
-  <!-- História -->
   <section class="section" id="historia">
     <h2>História do Jogo</h2>
     <p>
-      Em um mundo devastado por uma infecção apocalíptica, você é um dos últimos sobreviventes.  
-      Em “NightVeil”, cada noite traz uma nova onda de zumbis e o desafio é resistir o máximo possível.  
+      Em um mundo devastado por uma infecção misteriosa que transformou humanos em zumbis, você é um dos últimos sobreviventes vivos.  
+      Em “NightVeil”, cada dia e noite traz uma nova onda de zumbis e o desafio é sobreviver o máximo possível.  
       Prepare-se para testar seus conhecimentos de sobrevivência, administrar seus recursos e sobreviver ao caos.
     </p>
   </section>
 
-  <!-- Personagem -->
   <section class="section" id="personagem">
     <h2>Personagem</h2>
     <div class="character-container">
@@ -57,7 +52,6 @@
     </div>
   </section>
 
-  <!-- Informações Gerais -->
   <section class="section" id="info">
     <h2>Informações Gerais do Jogo</h2>
     <ul>
@@ -67,11 +61,10 @@
       <li><b>Estilo Visual:</b> Low Poly / Pós-apocalíptico</li>
       <li><b>Modo:</b> Single Player</li>
       <li><b>Status:</b> Protótipo jogável</li>
-      <li><b>Desenvolvido por:</b> Thiago José (CESMAC – Sistemas de Informação)</li>
+      <li><b>Desenvolvido por:</b> Thiago Nunes</li>
     </ul>
   </section>
 
-  <!-- Progresso -->
   <section class="section" id="progresso">
     <h2>Progresso Técnico</h2>
     <ul>
@@ -83,28 +76,36 @@
     </ul>
   </section>
 
-  <!-- Desafios -->
   <section class="section" id="desafios">
     <h2>Desafios e Soluções</h2>
     <p><b>Desafios:</b> Texturas quebradas, colisões inconsistentes e integração de assets.</p>
     <p><b>Soluções:</b> Conversão manual para URP, ajustes no Character Controller e padronização da hierarquia do projeto.</p>
   </section>
 
-  <!-- Galeria -->
   <section class="section" id="galeria">
     <h2>Capturas de Tela e Vídeo</h2>
     <div class="gallery">
-      <img src="images/gameplay1.png" alt="Gameplay 1">
-      <img src="images/gameplay2.png" alt="Gameplay 2">
+      <img src="images/Imagem NightVeil - Bomba.png" alt="Bomba Atômica" class="gallery-img">
+      <img src="images/Imagem NightVeil - Lamaçal.png" alt="Lamaçal" class="gallery-img">
     </div>
 
     <div class="video-container">
-      <!-- Substitua o link abaixo pelo vídeo do YouTube -->
-      <a href="#" target="_blank" class="video-link">🎬 Clique aqui para assistir ao vídeo do jogo</a>
+      <iframe
+        src="https://www.youtube.com/embed/LiFiuVI1yh8"
+        title="Trailer de NightVeil"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div id="imgModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImage">
+      <div id="caption"></div>
     </div>
   </section>
 
-  <!-- Próximos Passos -->
   <section class="section" id="roadmap">
     <h2>Próximos Passos</h2>
     <ul>
@@ -115,7 +116,6 @@
     </ul>
   </section>
 
-  <!-- Dúvidas -->
   <section class="section" id="duvidas">
     <h2>Dúvidas do Jogo</h2>
     <ul>
@@ -125,7 +125,6 @@
     </ul>
   </section>
 
-  <!-- Contato -->
   <section class="section" id="contato">
     <h2>Contato</h2>
     <p><b>Desenvolvedores:</b> Thiago Nunes e Marcela Lima</p>
@@ -137,5 +136,30 @@
     <p>© 2025 NightVeil | Desenvolvido por Thiago Nunes e Marcela Lima</p>
   </footer>
 
+  <script>
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImage");
+    const captionText = document.getElementById("caption");
+    const images = document.querySelectorAll(".gallery-img");
+    const span = document.querySelector(".close");
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+      });
+    });
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    modal.onclick = function(e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
